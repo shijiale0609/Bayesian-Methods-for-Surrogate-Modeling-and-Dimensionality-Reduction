@@ -1,0 +1,142 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+%\PassOptionsToPackage{numbers, compress}{natbib}
+% before loading nips_2018
+
+% ready for submission
+%\usepackage{nips_2018}
+%\usepackage[nonatbib]{nips_2018}
+%\usepackage[preprint]{nips_2018}
+
+% to compile a preprint version, e.g., for submission to arXiv, add
+% add the [preprint] option:
+%\usepackage[preprint]{nips_2018}
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+\usepackage[final]{nips_2018}
+
+% to avoid loading the natbib package, add option nonatbib:
+%\usepackage[nonatbib]{nips_2018}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+%\usepackage{bm}
+%\usepackage{cite}
+
+
+\title{Combination of Gaussian Processes and Neural Network}
+
+% The \author macro works with any number of authors. There are two
+% commands used to separate the names and addresses of multiple
+% authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to
+% break the lines. Using \AND forces a line break at that point. So,
+% if LaTeX puts 3 of 4 authors names on the first line, and the last
+% on the second line, try using \AND instead of \And before the third
+% author name.
+
+\author{
+Jiale Shi\\%\thanks{Use footnote for providing further
+    %information about author (webpage, alternative
+    %address)---\emph{not} for acknowledging funding agencies.} \\
+  Department of Chemical and Biomolecular Engineering\\
+  University of Notre Dame\\
+  Notre Dame, IN 46556 \\
+\texttt{Jiale.Shi.33@nd.edu} \\
+  %% examples of more authors
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \AND
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+}
+
+\begin{document}
+% \nipsfinalcopy is no longer used
+
+\maketitle
+
+\begin{abstract}
+Gaussian processes (GPs)  are generally nonparametric, which takes an infinite number of basis functions given by a probability distribution over functions. For a non-parametric model, the required number of parameters grows with the size of the training data; therefore, GPs have a very big challenge in the computational tractability. Inference in a Gaussian process has computational complexity of $\mathcal{O}(n^3)$. Even if using low rank approximations, the computational complexity is still $\mathcal{O}(n^2 m)$, $m$ is a user chosen parameter. A neural network (NN) is a parameterised model that can be tuned via gradient descent to approximate a labelled collection of data with high precision. The computational complexity of NN is much less than GPs. However, in the process of NN, the uncertainty would be dropped in the hidden layers. The uncertainty is very important because if the the uncertainty is missing, the high precision is meaningless. In addition, overfitting is a very common problem in NN. While GPs can track the uncertainty according to the prior. Therefore, combing the advantages of two worlds, GPs and NN together can be very useful to speed up computation and track uncertainty. Recently, there are some advancements in connecting GPs and NN.
+\end{abstract}
+
+\section{Introduction}
+talk about the background of Neural Network and Gaussian Process
+
+\subsection{Style}
+
+
+
+
+
+
+
+\section{Model}
+\label{model}
+
+Show some models, like Deep Gaussian, Conditional Neural Process, Neural Process, Attentive Neural Process. and just show the 1D regression results.
+
+An encoder $h$ from input space into representation space that takes in pairs of context values $(x_{i}, y_{i})$ and produces a representatin $r_{i} = h((x_{i}, y_{i}))$ for each of the pairs. We parameterise $h$ as a neural network.
+
+An aggregator $a$ that summarises the encoded inputs. 
+Crucially, the aggregator reduces the runtime to $\mathcal{O}(n+m)$ where $n$ and $m$ are the number of context and target points respectively.
+
+A conditional decoder $g$ that takes as input the sampled global latent variable $z$ as well as the new target locations $x_{T}$ and outputs the predictions $\hat{y}_{T}$ for the corresponding values of $f(x_{T}) = y_{T}$.
+
+\section{Results}
+\label{results}
+
+
+
+\section{Related work}
+\label{relatedwork}
+
+%\begin{verbatim}
+%   \cite{garnelo2018conditional} investigated\dots
+%\end{verbatim}
+
+conditional neural processes \cite{garnelo2018conditional}, attentive neural processes \cite{kim2019attentive}.
+
+\section{Discussions}
+\label{discussions}
+
+Please prepare 
+
+recently, deepmind published attentive neural processes paper beyond neural processes.
+
+
+\section*{Acknowledgments}
+I would like to thank Prof. Nicholas Zabaras for giving wonderful lectures. I would like to thank TA Dr. Souvik Chakraborty for giving assistants. I would like to thank 
+Navid Shervani-Tabar, Sina Malakpour, 
+Govinda Anantha Padmanabha, Nick Geneva, Xian Gao and Elvis A. Eugene for insightful discussions. 
+
+%\section*{References}
+
+\bibliographystyle{abbrv}
+\let\bibhang\relax
+%\normalem
+\bibliography{ref}
+\end{document}

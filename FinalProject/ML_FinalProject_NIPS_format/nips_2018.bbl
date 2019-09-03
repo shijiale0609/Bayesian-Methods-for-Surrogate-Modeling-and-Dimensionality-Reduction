@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{garnelo2018conditional}
+M.~Garnelo, D.~Rosenbaum, C.~J. Maddison, T.~Ramalho, D.~Saxton, M.~Shanahan,
+  Y.~W. Teh, D.~J. Rezende, and S.~Eslami.
+\newblock Conditional neural processes.
+\newblock {\em arXiv preprint arXiv:1807.01613}, 2018.
+
+\bibitem{kim2019attentive}
+H.~Kim, A.~Mnih, J.~Schwarz, M.~Garnelo, A.~Eslami, D.~Rosenbaum, O.~Vinyals,
+  and Y.~W. Teh.
+\newblock Attentive neural processes.
+\newblock {\em arXiv preprint arXiv:1901.05761}, 2019.
+
+\end{thebibliography}
